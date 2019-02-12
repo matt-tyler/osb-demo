@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: latency-job
+  namespace: lightning
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: storage-writer
+        image: gcr.io/schnauzer-163208/osb-demo
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "64Mi"
+

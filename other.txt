@@ -1,0 +1,5 @@
+docker build -t osb-demo .
+
+docker tag osb-demo gcr.io/schnauzer-163208/osb-demo
+
+docker push gcr.io/schnauzer-163208/osb-demo
